@@ -47,9 +47,9 @@
 									<ul id="nav" class="nav navbar-nav">
 										<li class="current"><a href="#slider">Основная</a></li>
 										<li><a href="#about">О НАС</a></li>
-										<li><a href="#skill">Статистика</a></li>
-										<li><a href="#story">История инвалидов</a></li>
-										<li><a href="#latest-works">Чем мы занимаемся, в свободное от домашки время</a></li>
+										<li><a href="#skill">Многообразие населения</a></li>
+										<li><a href="#story">Инклюзия образования</a></li>
+										<li><a href="#latest-works">Уроки настоящего</a></li>
 										<li><a href="#contact">Опрос</a></li>
 										<li><a href="#map">Карта месторождения</a></li>
 									</ul>
@@ -119,7 +119,7 @@
 				<div class="row">
 					<div class="col-md-2 col-sm-12 col-xs-12">
 						<div class="section-title">
-							<h2>Данные<span>       Школ</span></h2>
+							<h2>Многообразие<span>       Населения</span></h2>
 						</div>
 					</div>
 					<div class="col-md-10 col-sm-12 col-xs-12">
@@ -127,54 +127,26 @@
 							<div class="row">
 								<div class="col-md-6 col-sm-12 col-xs-12">
 									<div class="skill-content">
-										<h3>Что мы знаем об инклюзии в нашей школе?</h3>
-										<p><b>Мы собрали данные, полученные от детей из разных школ</b></p>
-										<p>Каждый голос был важен для нас.</p>
-										<p><b>На данный момент статистика показывает, что многие школы проводят мероприятия инклюзии</b></p>
+										<h3></h3>
+										<p><b></b></p>
+										<p></p>
+										<p><b></b></p>
 									</div>
 								</div>
 								<div class="col-md-6 col-sm-12 col-xs-12">
 									<div class="skill-main">
+										{% for n,pr in anal %}
 										<div class="single-skill">
 											<div class="skill-title">
-												<h4>Инвалиды</h4>
+												<h4>{{n}}</h4>
 											</div>
 											<div class="progress two">
-												<div class="progress-bar" data-percent="99">
-													<span>99%</span>
+												<div class="progress-bar" data-percent={{pr}}>
+													<span>{{pr}}%</span>
 												</div>
 											</div>
 										</div>
-										<div class="single-skill">
-											<div class="skill-title">
-												<h4>Женщины</h4>
-											</div>
-											<div class="progress two">
-												<div class="progress-bar" data-percent="58">
-													<span>58%</span>
-												</div>
-											</div>
-										</div>
-										<div class="single-skill">
-											<div class="skill-title">
-												<h4>Двоишники<h4>
-											</div>
-											<div class="progress two">
-												<div class="progress-bar" data-percent="56">
-													<span>56%</span>
-												</div>
-											</div>
-										</div>
-										<div class="single-skill">
-											<div class="skill-title">
-												<h4>Боготворящие c++</h4>
-											</div>
-											<div class="progress two">
-												<div class="progress-bar" data-percent="45">
-													<span>45%</span>
-												</div>
-											</div>
-										</div>
+										{% endfor %}
 									</div>
 								</div>
 							</div>
@@ -191,7 +163,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="section-title">
-							<h2>История<span> нашей школы</span></h2>
+							<h2>Инклюзия <span> образования</span></h2>
 						</div>
 					</div>
 				</div>
@@ -200,38 +172,38 @@
 						<div class="story-content">
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">2015</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ans[0]}}</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-									<h3>Самый первый проект по инклюзии</h3>
-									<p>Мы набрали 0 балов</p>
-									<p class="p2">Мы не победили, оттого очень расстроились. Теперь сидим - грустим</p>
+									<h3>Опрошенных чувствуют себя ущемленными</h3>
+									<p>И эти дети страдают</p>
+									<p class="p2">Они чувствуют себя ущемленными</p>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">2019</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ans[1]}}</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-									<h3>Второй проект</h3>
-									<p>И наконец-то удачный</p>
-									<p class="p2">Мы смогли набрать 1 балл из 249. У нас появились амбиции</p>
+									<h3>Опрошенных - за инклюзивность</h3>
+									<p>И эти дети страдают</p>
+									<p class="p2">Они чувствуют себя ущемленными</p>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">2020</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">{{ans[2]}}</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">
-									<h3>Очередной провал</h3>
-									<p>Мы задумались об инклюзии</p>
-									<p class="p2">Инклюзия важна. Она спасает нас</p>
+									<h3>Опрошенных согласны учиться в одном классе с инвалидом</h3>
+									<p>И эти дети страдают</p>
+									<p class="p2">Они чувствуют себя ущемленными</p>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">2021</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[3]}}</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-									<h3>Уроки настоящего</h3>
-									<p>Мы набрали 1 балл из 6</p>
-									<p class="p2">Да-да, вам не показалось. Мы покоряем новые вершины</p>
+									<h3>Опрошенных - инвалиды</h3>
+									<p>И эти дети страдают</p>
+									<p class="p2">Они чувствуют себя ущемленными</p>
 								</div>
 							</div>
 						</div>
@@ -247,7 +219,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="section-title">
-							<h2>My <span>Portfolio</span></h2>
+							<h2>УРОКИ<span> НАСТОЯЩЕГО</span></h2>
 						</div>
 					</div>
 				</div>
@@ -355,13 +327,12 @@
 						<div class="form-head">
 							<form class="form" action="#skill" method="post">
 <form class="survey_form" method="post">
-                                    <input class="form-control" id="age" placeholder="Возраст" name="age"><Br>
+									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
                                     <div class="form-group">
                                         <label>Выберите свой пол</label>
                                         <p><input type="radio" name="gender" value="Женщина" style="height:20px; width:20px; vertical-align: middle;">Женский<Br>
                                         <input type="radio" name="gender" value="Мужчина" style="height:20px; width:20px; vertical-align: middle;">Мужской<Br>
                                         </div>
-                                    <input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
                                     <div class="form-group">
 									<label>Национальность</label><Br>
 									<select id="nationality" name="nationality">
@@ -375,7 +346,11 @@
                                         <p><input type="radio" name="disability" value=1 style="height:20px; width:20px; vertical-align: middle;">Да<Br>
                                         <input type="radio" name="disability" value=0 style="height:20px; width:20px; vertical-align: middle;">Нет<Br>
                                         </div>
-                                    <button type="submit" class="btn btn-secondary">Отправить</button>
+									<p><input type="checkbox" name="f1" value="1" style="height:20px; width:20px;">  Я чувствую/чувствовал себя ущемленным</p>
+									<p><input type="checkbox" name="f2" value="1" style="height:20px; width:20px;">  Я - за инклюзивность в образовании</p>
+									<p><input type="checkbox" name="f3" value="1" style="height:20px; width:20px;">  Я согласен учиться в одном классе с инвалидом</p>
+                                    <Br>
+									<button type="submit" class="btn btn-secondary">Отправить</button>
                                 </form>
 </form>
 						</div>
@@ -392,11 +367,17 @@
 				<div class="row">
 					<div class="about-content">
 						<div class="col-md-2 col-sm-2 col-xs-12">
+						</div>
+						<div class="col-md-6  col-sm-6 col-xs-12">
+							<br>
+							<br>
+							<br>
 							<div class="section-title">
 								<h2>Карта<span> Рождения</span></h2>
 							</div>
-						</div>
-						<div class="col-md-6  col-sm-6 col-xs-12">
+							<br>
+							<br>
+							<br>
 							<div class="single-about">
 								<h3>На ней вы можете видеть места рождения других людей, принявших участие в опросе</h3>
 							</div>
@@ -434,7 +415,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<p>© 2021 Сделано Настей</a></p>
+							<p>© 2021 Сделано Вечеренко Анастасией</a></p>
 						</div>
 					</div>
 				</div>

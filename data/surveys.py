@@ -9,8 +9,10 @@ class Survey(SqlAlchemyBase, UserMixin, SerializerMixin):
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
-    age = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     gender = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     birthplace = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     nationality = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     disability = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    f1 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    f2 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    f3 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
