@@ -49,8 +49,8 @@
 										<li><a href="#about">О НАС</a></li>
 										<li><a href="#skill">Многообразие населения</a></li>
 										<li><a href="#story">Инклюзия образования</a></li>
-										<li><a href="#latest-works">Уроки настоящего</a></li>
-										<li><a href="#contact">Опрос</a></li>
+										<li><a href="#latest-works">Мероприятия инклюзии</a></li>
+										<li><a href="/survey">Опрос</a></li>
 										<li><a href="#map">Карта месторождения</a></li>
 									</ul>
 								</div> 
@@ -69,8 +69,8 @@
 				<div class="row">
 					<div class="col-md-7 col-sm-12 col-xs-12">
 						<div class="text">
-							<h1>МОАУ "Гимназия №1". Уроки настоящего. Инклюзивность</h1>
-							<p>Инклюзивное образование (инклюзивная учеба), также называемое инклюзией, – это образование, которое включает всех: все учащиеся посещают обычные школы, колледжи и университеты, соответствующие их возрасту, и получают поддержку, чтобы учиться, вносить свой вклад и участвовать во всех аспектах жизни учебного заведения.</p>
+							<h1>Инклюзия в образовании. Многообразие населения.</h1>
+							<p>В то время как тема толерантности в разных ее проявлениях набирает популярность в мире, всё чаще возникают дискуссии о важности инклюзии. Большинство людей соглашается с тем, что с точки зрения социального равенства инклюзивная среда необходима. Однако не так просто ответить на вопрос почему. Каковы же преимущества инклюзивного подхода?</p>
 						</div>
 					</div>
 				</div>
@@ -90,9 +90,9 @@
 						</div>
 						<div class="col-md-6  col-sm-6 col-xs-12">
 							<div class="single-about">
-								<p class="bolt">Привет! Мы супер крутые ребята. Смотрите, какой классный у нас сайт.</p>
-								<p>И мы все за инклюзивность! Ведь инклюзивность - это круто.</p>
-								<p class="bolt">У нас в школе куча инвалидов! Наша школа - за инклюзивность!</p>
+								<p class="bolt">Привет! Этот сайт создан специально для проекта "Уроки настоящего" командой МОАУ "Гимназия №1".</p>
+								<p>И мы все за инклюзивность! Ведь инклюзивность - это круто!</p>
+								<p class="bolt">Термин «инклюзия» в общем обозначает процесс включения, вовлечения или вхождения во что-то, как часть целого. По отношению к образованию ЮНЕСКО понимает инклюзию как процесс «обращения и реагирования на разнообразие потребностей всех обучающихся через участие в обучении, культуре и сообществах и сокращении отказа от поступления в школы и исключении из них». Его основной целью является создание свободной, безбарьерной среды в обучении и профессиональной подготовке людей с особыми потребностями.</p>
 								<div class="social">
 									<ul>
 										<li><a href="https://vk.com/projectorengym1"><i class="fa fa-vk"></i></a></li>
@@ -104,7 +104,7 @@
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<div class="image">
 								<img src="static/img/about.jpg" alt="#">
-								<a href="static/video/pf11.mp4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+								<a href="https://www.youtube.com/watch?v=kWARSyLpntc" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
 							</div>
 						</div>
 					</div>
@@ -120,6 +120,8 @@
 					<div class="col-md-2 col-sm-12 col-xs-12">
 						<div class="section-title">
 							<h2>Многообразие<span>       Населения</span></h2>
+					</div>
+
 						</div>
 					</div>
 					<div class="col-md-10 col-sm-12 col-xs-12">
@@ -138,11 +140,11 @@
 										{% for n,pr in anal %}
 										<div class="single-skill">
 											<div class="skill-title">
-												<h4>{{n}}</h4>
+												<h4>{{pr}} - {{n}}%</h4>
 											</div>
 											<div class="progress two">
-												<div class="progress-bar" data-percent={{pr}}>
-													<span>{{pr}}%</span>
+												<div class="progress-bar" data-percent={{n}}>
+													<span></span>
 												</div>
 											</div>
 										</div>
@@ -172,38 +174,65 @@
 						<div class="story-content">
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ans[0]}}</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ans[0]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+									<h3>Школьников-инвалидов удовлетворены созданными для них условиями обучения</h3>
+								</div>
+							</div>
+							<!-- single-story -->
+							<div class="single-story">
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ans[1]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+									<h3>Родителей школьников-инвалидов удовлетворены созданными для их детей условиями обучения</h3>
+								</div>
+							</div>
+							<!-- single-story -->
+							<div class="single-story">
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">{{ans[2]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+									<h3>Школьников готовы учиться вместе с человеком с ОВЗ</h3>
+								</div>
+							</div>
+							<!-- single-story -->
+							<div class="single-story">
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[3]}}%</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-									<h3>Опрошенных чувствуют себя ущемленными</h3>
-									<p>И эти дети страдают</p>
-									<p class="p2">Они чувствуют себя ущемленными</p>
+									<h3>Родителей школьников позитивно относятся к совместному обучению с школьниками с ОВЗ</h3>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ans[1]}}</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[4]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+									<h3>Школьников позитивно относятся к инклюзивному обучению</h3>
+								</div>
+							</div>
+							<!-- single-story -->
+							<div class="single-story">
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[5]}}%</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-									<h3>Опрошенных - за инклюзивность</h3>
-									<p>И эти дети страдают</p>
-									<p class="p2">Они чувствуют себя ущемленными</p>
+									<h3>Родителей школьников позитивно относятся к инклюзивному обучению</h3>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">{{ans[2]}}</span>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[6]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+									<h3>Женщин ощущают дискриминацию в связи с их половой принадлежностью</h3>
+								</div>
+							</div>
+							<!-- single-story -->
+							<div class="single-story">
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[7]}}%</span>
 								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">
-									<h3>Опрошенных согласны учиться в одном классе с инвалидом</h3>
-									<p>И эти дети страдают</p>
-									<p class="p2">Они чувствуют себя ущемленными</p>
+									<h3>Мужчин ощущают дискриминацию в связи с их половой принадлежностью</h3>
 								</div>
 							</div>
 							<!-- single-story -->
 							<div class="single-story">
-								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[3]}}</span>
-								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-									<h3>Опрошенных - инвалиды</h3>
-									<p>И эти дети страдают</p>
-									<p class="p2">Они чувствуют себя ущемленными</p>
+								<span class="year wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1s">{{ans[8]}}%</span>
+								<div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.9s">
+									<h3>Опрошенных ощущают дискриминацию в связи с их национальной принадлежностью</h3>
 								</div>
 							</div>
 						</div>
@@ -219,7 +248,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="section-title">
-							<h2>УРОКИ<span> НАСТОЯЩЕГО</span></h2>
+							<h2>МЕРОПРИЯТИЯ <span>ИНКЛЮЗИИ</span></h2>
 						</div>
 					</div>
 				</div>
@@ -231,7 +260,7 @@
 							<div class="single-work">
 								<img src="static/img/pf1.jpg" alt="#">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">ОБЖ</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -241,7 +270,7 @@
 							<div class="single-work">
 								<img src="static/img/pf2.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">БОТЫ И НАКРУТКА В ВК</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -251,7 +280,7 @@
 							<div class="single-work">
 								<img src="static/img/pf3.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">НАША ЛЮБИМАЯ ПОЛИНА ГАГАРИНА</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -261,7 +290,7 @@
 							<div class="single-work">
 								<img src="static/img/pf4.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">ЗНАЧОК</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -271,7 +300,7 @@
 							<div class="single-work">
 								<img src="static/img/pf5.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">ПРОСТО СОВМЕСТНО ФОТО</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -281,7 +310,7 @@
 							<div class="single-work">
 								<img src="static/img/pf6.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">КЛАССНЫЕ ЛИЦА</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -291,7 +320,7 @@
 							<div class="single-work">
 								<img src="static/img/pf7.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">РУКИ</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"></div>
 								</div>
 							</div>
@@ -301,7 +330,7 @@
 							<div class="single-work">
 								<img src="static/img/pf8.jpg" alt="">
 								<div class="works-hover">
-									<h4><a href="pf-2colum.html">ШКОЛА</a></h4>
+									<h4><a href="pf-2colum.html"></a></h4>
 									<div class="link"><a href="portfolio-single.html"></a></div>
 								</div>
 							</div>
@@ -311,54 +340,6 @@
 			</div>
 		</section>
 		<!--/ End Works -->
-	
-		<!-- Contact -->
-		<section id="contact" class="contact section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="contact-info">
-							<h4>Опрос</h4>
-							<p>Пожалуйста, пройдите опрос. Мы поймем, сколько на самом деле школ проводят мероприятия по инклюзии</p>
-							<p>Каждый голос важен для нас</p>
-						</div>
-					</div>
-					<div class="col-md-8 col-sm-12 col-xs-12 ">
-						<div class="form-head">
-							<form class="form" action="#skill" method="post">
-<form class="survey_form" method="post">
-									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
-                                    <div class="form-group">
-                                        <label>Выберите свой пол</label>
-                                        <p><input type="radio" name="gender" value="Женщина" style="height:20px; width:20px; vertical-align: middle;">Женский<Br>
-                                        <input type="radio" name="gender" value="Мужчина" style="height:20px; width:20px; vertical-align: middle;">Мужской<Br>
-                                        </div>
-                                    <div class="form-group">
-									<label>Национальность</label><Br>
-									<select id="nationality" name="nationality">
-									{% for n in nation %}
-										<option name="nationality" value={{n}} >{{n}}</option>
-										{% endfor %}
-									</select>
-								</div>
-                                    <div class="form-group">
-                                        <label>У вас есть инвалидность?</label>
-                                        <p><input type="radio" name="disability" value=1 style="height:20px; width:20px; vertical-align: middle;">Да<Br>
-                                        <input type="radio" name="disability" value=0 style="height:20px; width:20px; vertical-align: middle;">Нет<Br>
-                                        </div>
-									<p><input type="checkbox" name="f1" value="1" style="height:20px; width:20px;">  Я чувствую/чувствовал себя ущемленным</p>
-									<p><input type="checkbox" name="f2" value="1" style="height:20px; width:20px;">  Я - за инклюзивность в образовании</p>
-									<p><input type="checkbox" name="f3" value="1" style="height:20px; width:20px;">  Я согласен учиться в одном классе с инвалидом</p>
-                                    <Br>
-									<button type="submit" class="btn btn-secondary">Отправить</button>
-                                </form>
-</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/ End Contact -->
 
 
 		<!-- Start about -->

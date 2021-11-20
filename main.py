@@ -32,54 +32,105 @@ def statistics():
 
 
 def analytics():
-    f = [int(i) for i in open("static/results.txt", mode='rt', encoding='utf8').read().split()]
-    f2 = [int(i) for i in open("static/nation.txt", mode='rt', encoding='utf8').read().split()]
+    peopler = open("static/people.txt", mode='rt', encoding='utf8').read().split()
+    resultr = open("static/results.txt", mode='rt', encoding='utf8').read().split()
+    natr = open("static/nation.txt", mode='rt', encoding='utf8').read().split()
     nation = ['русские', 'башкиры', 'белорусы', 'татары', 'чеченцы', 'чуваши', 'украинцы', 'армяне', 'другое']
-    return [round(f[i] / f[0] * 100, 2) if f[0] > 0 else 0.0 for i in range(1, 5)],\
-           [[nation[i], round(f2[i] / f[0] * 100, 2) if f[0] > 0 else 0.0] for i in range(9)]
+    ans = []
+    for i in range(9):
+        if int(peopler[i]) > 0:
+            ans.append(round(int(resultr[i]) / int(peopler[i]), 2) * 100)
+        else:
+            ans.append(0.0)
+    if int(peopler[-1]) == 0:
+        anal = [[0.0, nation[i]] for i in range(9)]
+    else:
+        anal = []
+        for i in range(9):
+            anal.append([round(int(natr[i]) / int(peopler[-1]), 2) * 100, nation[i]])
+    return ans, anal
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def main_window():
     nation = ['русские', 'башкиры', 'белорусы', 'татары', 'чеченцы', 'чуваши', 'украинцы', 'армяне', 'другое']
+    statistics()
+    ans, anal = analytics()
+    return render_template('index.html', nation=nation, ans=ans, anal=anal)
+
+
+@app.route('/survey', methods=['GET', 'POST'])
+def survey():
+    nation = ['русские', 'башкиры', 'белорусы', 'татары', 'чеченцы', 'чуваши', 'украинцы', 'армяне', 'другое']
     if request.method == 'GET':
-        statistics()
-        ans, anal = analytics()
-        return render_template('index.html', nation=nation, ans=ans, anal=anal)
-    db_sess = db_session.create_session()
+        return render_template('survey.html', nation=nation)
+    val = request.form['gender'][-1]
+    peopler = [int(i) for i in open("static/people.txt", mode='rt', encoding='utf8').read().split()]
+    peoplew = open("static/people.txt", mode='wt', encoding='utf8')
+    resultr = [int(i) for i in open("static/results.txt", mode='rt', encoding='utf8').read().split()]
+    resultw = open("static/results.txt", mode='wt', encoding='utf8')
     ans = list(request.form)
-    fr = open("static/results.txt", mode='rt', encoding='utf8').read().split()
-    fr[0] = str(int(fr[0]) + 1)
-    fw = open("static/results.txt", mode='wt', encoding='utf8')
-    f1, f2, f3 = False, False, False
-    if 'f1' in ans:
-        f1 = True
-        fr[1] = str(int(fr[1]) + 1)
-    if 'f2' in ans:
-        fr[2] = str(int(fr[2]) + 1)
-        f2 = True
-    if 'f3' in ans:
-        fr[3] = str(int(fr[3]) + 1)
-        f3 = True
-    if request.form['disability'] == '1':
-        fr[4] = str(int(fr[4]) + 1)
-    f1r = open("static/nation.txt", mode='rt', encoding='utf8').read().split()
-    f1w = open("static/nation.txt", mode='wt', encoding='utf8')
+    if val == '1' and request.form['disability'] == '1':
+        peopler[0] += 1
+        if 'f1' in ans:
+            resultr[0] += 1
+    if val == '2' and request.form['disability'] == '1':
+        peopler[1] += 1
+        if 'f2' in ans:
+            resultr[1] += 1
+    if val == '1' and request.form['disability'] != '1':
+        peopler[2] += 1
+        if 'f3' in ans:
+            resultr[2] += 1
+    if val == '2' and request.form['disability'] != '1':
+        peopler[3] += 1
+        if 'f3' in ans:
+            resultr[3] += 1
+    if val == '1':
+        peopler[4] += 1
+        if 'f2' in ans:
+            resultr[4] += 1
+    if val == '2':
+        peopler[5] += 1
+        if 'f2' in ans:
+            resultr[5] += 1
+    if request.form['gender'][:-1] == '"Женщина':
+        peopler[6] += 1
+        if 'f4' in ans:
+            resultr[6] += 1
+    if request.form['gender'][:-1] == '"Мужчина':
+        peopler[7] += 1
+        if 'f4' in ans:
+            resultr[7] += 1
+    peopler[8] += 1
+    if 'f5' in ans:
+        resultr[8] += 1
+    peoplew.write(' '.join([str(i) for i in peopler]))
+    peoplew.close()
+    resultw.write(' '.join([str(i) for i in resultr]))
+    resultw.close()
+    vopr = [False for _ in range(5)]
+    for i in range(5):
+        if f'f{i + 1}' in ans:
+            vopr[i] = True
     ind = nation.index(request.form['nationality'])
-    f1r[ind] = str(int(f1r[ind]) + 1)
-    f1w.write(' '.join(f1r))
-    f1w.close()
-    fw.write(' '.join(fr))
-    fw.close()
+    natr = open("static/nation.txt", mode='rt', encoding='utf8').read().split()
+    narw = open("static/nation.txt", mode='wt', encoding='utf8')
+    natr[ind] = str(int(natr[ind]) + 1)
+    narw.write(' '.join(natr))
+    narw.close()
     new_survey = Survey(
-        gender=request.form['gender'],
+        gender=request.form['gender'][:-1],
         birthplace=request.form['birthplace'],
         nationality=request.form['nationality'],
         disability=bool(int(request.form['disability'])),
-        f1=f1,
-        f2=f2,
-        f3=f3
+        f1=vopr[0],
+        f2=vopr[1],
+        f3=vopr[2],
+        f4=vopr[3],
+        f5=vopr[4]
     )
+    db_sess = db_session.create_session()
     db_sess.add(new_survey)
     db_sess.commit()
     return redirect('/')

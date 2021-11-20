@@ -16,3 +16,5 @@ class Survey(SqlAlchemyBase, UserMixin, SerializerMixin):
     f1 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
     f2 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
     f3 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    f4 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    f5 = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
