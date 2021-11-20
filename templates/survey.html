@@ -1,0 +1,282 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Доброта - основа и общества</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="static/img/icon.png">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300i,400,400i,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/slicknav.min.css">
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="static/css/animate.min.css">
+        <link rel="stylesheet" href="static/css/magnific-popup.css">
+
+		<!-- Xman CSS -->
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="static/css/responsive.css">
+    </head>
+    <body>
+
+		<!-- Social -->
+		<div class="social-body">
+			<ul>
+				<li class="instagram"><a href="https://www.instagram.com/orengym1/"><i class="fa fa-instagram"></i></a></li>
+				<li class="vk"><a href="https://vk.com/projectorengym1"><i class="fa fa-vk"></i></a></li>
+			</ul>
+		</div>
+		<!--/ End Social -->
+
+		<!-- Slider Area -->
+		<section id="slider" class="slider" style="background-image:url('static/img/slider.png')">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-sm-12 col-xs-12">
+						<div class="text">
+							<h1>Инклюзия в образовании. Многообразие населения.</h1>
+							<p>В то время как тема толерантности в разных ее проявлениях набирает популярность в мире, всё чаще возникают дискуссии о важности инклюзии. Большинство людей соглашается с тем, что с точки зрения социального равенства инклюзивная среда необходима. Однако не так просто ответить на вопрос почему. Каковы же преимущества инклюзивного подхода?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Slider Area -->
+
+
+		<!-- Contact -->
+		<section id="contact" class="contact section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="contact-info">
+							<h4>Опрос</h4>
+							<p>Пожалуйста, пройдите опрос. Мы поймем, сколько на самом деле школ проводят мероприятия по инклюзии</p>
+							<p>Каждый голос важен для нас</p>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-12 col-xs-12 ">
+						<div class="form-head">
+						<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'child')">Для школьников</button>
+  <button class="tablinks" onclick="openCity(event, 'parents')">Для родителей школьников</button>
+  <button class="tablinks" onclick="openCity(event, 'other')">Для прочих пользователей</button>
+</div>
+
+<div id="child" class="tabcontent">
+  <h3>Опрос для школьников</h3><br>
+	<form class="form" action="#skill" method="post">
+<form class="survey_form" method="post">
+									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
+                                    <div class="form-group">
+                                        <label>Выберите свой пол</label>
+                                        <p><input type="radio" name="gender" value="Женщина1" style="height:20px; width:20px; vertical-align: middle;">Женский<Br>
+                                        <input type="radio" name="gender" value="Мужчина1" style="height:20px; width:20px; vertical-align: middle;">Мужской<Br>
+                                        </div>
+                                    <div class="form-group">
+									<label>Национальность</label><Br>
+									<select id="nationality" name="nationality">
+									{% for n in nation %}
+										<option name="nationality" value={{n}} >{{n}}</option>
+										{% endfor %}
+									</select>
+								</div>
+                                    <div class="form-group">
+                                        <label>У вас есть инвалидность?</label>
+                                        <p><input type="radio" name="disability" value=1 style="height:20px; width:20px; vertical-align: middle;">Да<Br>
+                                        <input type="radio" name="disability" value=0 style="height:20px; width:20px; vertical-align: middle;">Нет<Br>
+                                        </div>
+									<p><input type="checkbox" name="f1" value="1" style="height:20px; width:20px;">  Для меня созданы все образовательные условия</p>
+									<p><input type="checkbox" name="f2" value="1" style="height:20px; width:20px;">  Я - за инклюзивность в образовании</p>
+									<p><input type="checkbox" name="f3" value="1" style="height:20px; width:20px;">  Я готов учиться в одном классе с человеком с ОВЗ</p>
+									<p><input type="checkbox" name="f4" value="1" style="height:20px; width:20px;">  Я чувствую разницу в отношении ко мне в связи с моим полом</p>
+									<p><input type="checkbox" name="f5" value="1" style="height:20px; width:20px;">  Я чувствую разницу в отношении ко мне в связи с моей национальностью</p>
+                                    <Br>
+									<button type="submit" class="btn btn-secondary">Отправить</button>
+                                </form>
+</form>
+</div>
+
+<div id="parents" class="tabcontent">
+  <h3>Опрос для родителей школьников</h3><br>
+	<form class="form" action="#skill" method="post">
+<form class="survey_form" method="post">
+									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
+                                    <div class="form-group">
+                                        <label>Выберите свой пол</label>
+                                        <p><input type="radio" name="gender" value="Женщина2" style="height:20px; width:20px; vertical-align: middle;">Женский<Br>
+                                        <input type="radio" name="gender" value="Мужчина2" style="height:20px; width:20px; vertical-align: middle;">Мужской<Br>
+                                        </div>
+                                    <div class="form-group">
+									<label>Национальность</label><Br>
+									<select id="nationality" name="nationality">
+									{% for n in nation %}
+										<option name="nationality" value={{n}} >{{n}}</option>
+										{% endfor %}
+									</select>
+								</div>
+                                    <div class="form-group">
+                                        <label>У вашего ребенка есть инвалидность?</label>
+                                        <p><input type="radio" name="disability" value=1 style="height:20px; width:20px; vertical-align: middle;">Да<Br>
+                                        <input type="radio" name="disability" value=0 style="height:20px; width:20px; vertical-align: middle;">Нет<Br>
+                                        </div>
+									<p><input type="checkbox" name="f1" value="1" style="height:20px; width:20px;">  Для моего ребенка созданы все образовательные условия</p>
+									<p><input type="checkbox" name="f2" value="1" style="height:20px; width:20px;">  Я - за инклюзивность в образовании</p>
+									<p><input type="checkbox" name="f3" value="1" style="height:20px; width:20px;">  Я готов к тому, что мой ребенок будет учиться в одном классе с человеком с ОВЗ</p>
+	<p><input type="checkbox" name="f4" value="1" style="height:20px; width:20px;">  Я чувствую разницу в отношении к моему ребенку в связи с его полом</p>
+									<p><input type="checkbox" name="f5" value="1" style="height:20px; width:20px;"> Я чувствую разницу в отношении к моему ребенку в связи с его национальностью</p>
+                                    <Br>
+									<button type="submit" class="btn btn-secondary">Отправить</button>
+                                </form>
+</form>
+</div>
+
+<div id="other" class="tabcontent">
+  <h3>Опрос для прочих пользователей</h3><br>
+<form class="form" action="#skill" method="post">
+<form class="survey_form" method="post">
+									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
+                                    <div class="form-group">
+                                        <label>Выберите свой пол</label>
+                                        <p><input type="radio" name="gender" value="Женщина3" style="height:20px; width:20px; vertical-align: middle;">Женский<Br>
+                                        <input type="radio" name="gender" value="Мужчина3" style="height:20px; width:20px; vertical-align: middle;">Мужской<Br>
+                                        </div>
+                                    <div class="form-group">
+									<label>Национальность</label><Br>
+									<select id="nationality" name="nationality">
+									{% for n in nation %}
+										<option name="nationality" value={{n}} >{{n}}</option>
+										{% endfor %}
+									</select>
+								</div>
+                                    <div class="form-group">
+                                        <label>У вас есть инвалидность?</label>
+                                        <p><input type="radio" name="disability" value=1 style="height:20px; width:20px; vertical-align: middle;">Да<Br>
+                                        <input type="radio" name="disability" value=0 style="height:20px; width:20px; vertical-align: middle;">Нет<Br>
+                                        </div>
+									<p><input type="checkbox" name="f1" value="1" style="height:20px; width:20px;">  Для меня созданы все рабочие условия</p>
+									<p><input type="checkbox" name="f2" value="1" style="height:20px; width:20px;">  Я - за инклюзивность в организациях</p>
+									<p><input type="checkbox" name="f3" value="1" style="height:20px; width:20px;">  Я готов работать с человеком с ОВЗ</p>
+	<p><input type="checkbox" name="f4" value="1" style="height:20px; width:20px;">  Я чувствую разницу в отношении ко мне в связи с моим полом</p>
+									<p><input type="checkbox" name="f5" value="1" style="height:20px; width:20px;">  Я чувствую разницу в отношении ко мне в связи с моей национальностью</p>
+                                    <Br>
+									<button type="submit" class="btn btn-secondary">Отправить</button>
+                                </form>
+</form>
+</div>
+<script>
+      function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+  </script>
+							<style>
+								.tab {
+    overflow: hidden;
+    border: 1px solid #4CAF50;
+    background-color: #C8E6C9;
+}
+
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+.tab button:hover {
+    background-color: #FFEB3B;
+}
+
+
+.tab button.active {
+    background-color: #4CAF50;
+  color: #fff;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #4CAF50;
+    border-top: none;
+}
+							</style>
+</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Contact -->
+
+
+		<!-- Footer -->
+		<footer id="footer" class="footer section">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<!-- Social -->
+							<ul class="social">
+								<li><a href="https://vk.com/projectorengym1"><span class="fa fa-vk"></span></a></li>
+								<li><a href="http://www.1-гимназия.рф/"><span class="fa fa-dribbble"></span></a></li>
+								<li><a href="https://www.instagram.com/orengym1/"><span class="fa fa-instagram"></span></a></li>
+							</ul>
+							<!-- End Social -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p>© 2021 Сделано Вечеренко Анастасией</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--/ End Footer -->
+
+        <script src="static/js/jquery.min.js">  </script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/jquery.nav.js"></script>
+        <script src="static/js/jquery.slicknav.min.js"></script>
+        <script src="static/js/easing.min.js"></script>
+		<script src="static/js/jquery-appear.js"></script>
+        <script src="static/js/jquery.scrollUp.min.js"></script>
+        <script src="static/js/owl.carousel.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<script src="static/js/jquery.counterup.min.js"></script>
+		<script src="static/js/isotope.pkgd.min.js"></script>
+		<script src="static/js/wow.min.js"></script>
+		<script src="static/js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyC0RqLa90WDfoJedoE3Z_Gy7a7o8PCL2jw"></script>
+        <script type="text/javascript" src="static/js/gmaps.min.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+</html>
