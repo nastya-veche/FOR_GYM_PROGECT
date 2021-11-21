@@ -143,7 +143,6 @@ def survey():
     db_sess.commit()
     return redirect('/')
 
-
 if __name__ == '__main__':
     #app.run(port=80)
     app.run(port=443, host='0.0.0.0', ssl_context=context)
