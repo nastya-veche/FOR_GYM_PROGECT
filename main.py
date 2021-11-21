@@ -2,8 +2,10 @@ from flask import Flask, render_template, redirect, request
 from data import db_session
 from data.surveys import Survey
 import requests
+from OpenSSL import SSL
 
 
+context=('certificate.crt', 'server.key')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 db_session.global_init("db/survey_data.db")
@@ -143,4 +145,5 @@ def survey():
 
 
 if __name__ == '__main__':
-    app.run(port=80)
+    #app.run(port=80)
+    app.run(port=443, host='0.0.0.0', ssl_context=context)
