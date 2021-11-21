@@ -12,7 +12,7 @@ db_session.global_init("db/survey_data.db")
 
 
 def returne_coords(find):
-    geocoder_request = f"http://geocode-maps.yandex.ru/1.x/?apikey=40d1649f-0493-4b70-98ba-98533de7710b&geocode={find}&format=json"
+    geocoder_request = f"https://geocode-maps.yandex.ru/1.x/?apikey=40d1649f-0493-4b70-98ba-98533de7710b&geocode={find}&format=json"
     response = requests.get(geocoder_request)
     if response:
         json_response = response.json()
@@ -25,7 +25,7 @@ def statistics():
     db_sess = db_session.create_session()
     places = db_sess.query(Survey.birthplace).all()
     coords = list(set([returne_coords(i[0]) for i in places]))
-    map_request = "http://static-maps.yandex.ru/1.x/?ll=87.182329,64.202375&z=2&size=450,450&l=map&pt="
+    map_request = "https://static-maps.yandex.ru/1.x/?ll=87.182329,64.202375&z=2&size=450,450&l=map&pt="
     map_request += '~'.join(coords)
     response = requests.get(map_request)
     if response:
