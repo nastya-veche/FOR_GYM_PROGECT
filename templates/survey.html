@@ -62,6 +62,15 @@
 					</div>
 					<div class="col-md-8 col-sm-12 col-xs-12 ">
 						<div class="form-head">
+							{% if zam == "birthplace" %}
+	<label style="color: #FF0000;">Вы не указали место рождения</label>
+	{% endif %}
+							{% if zam == "gender" %}
+	<label style="color: #FF0000;">Вы не указали свой пол</label>
+	{% endif %}
+							{% if zam == "disability" %}
+	<label style="color: #FF0000;">Вы не указали, есть ли инвалидность</label>
+	{% endif %}
 						<div class="tab">
   <button class="tablinks" onclick="openCity(event, 'child')">Для школьников</button>
   <button class="tablinks" onclick="openCity(event, 'parents')">Для родителей школьников</button>
@@ -70,7 +79,7 @@
 
 <div id="child" class="tabcontent">
   <h3>Опрос для школьников</h3><br>
-	<form class="form" action="#skill" method="post">
+	<form class="form" method="post">
 <form class="survey_form" method="post">
 									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
                                     <div class="form-group">
@@ -104,7 +113,7 @@
 
 <div id="parents" class="tabcontent">
   <h3>Опрос для родителей школьников</h3><br>
-	<form class="form" action="#skill" method="post">
+	<form class="form" method="post">
 <form class="survey_form" method="post">
 									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
                                     <div class="form-group">
@@ -138,7 +147,7 @@
 
 <div id="other" class="tabcontent">
   <h3>Опрос для прочих пользователей</h3><br>
-<form class="form" action="#skill" method="post">
+<form class="form" method="post">
 <form class="survey_form" method="post">
 									<input class="form-control" id="birthplace" placeholder="Место рождения" name="birthplace"><Br>
                                     <div class="form-group">

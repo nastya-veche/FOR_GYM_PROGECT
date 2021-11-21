@@ -63,7 +63,13 @@ def main_window():
 def survey():
     nation = ['русские', 'башкиры', 'белорусы', 'татары', 'чеченцы', 'чуваши', 'украинцы', 'армяне', 'другое']
     if request.method == 'GET':
-        return render_template('survey.html', nation=nation)
+        return render_template('survey.html', nation=nation, zam='none')
+    if request.form['birthplace'] == '':
+        return render_template('survey.html', nation=nation, zam='birthplace')
+    if 'gender' not in request.form:
+        return render_template('survey.html', nation=nation, zam='gender')
+    if 'disability' not in request.form:
+        return render_template('survey.html', nation=nation, zam='disability')
     val = request.form['gender'][-1]
     peopler = [int(i) for i in open("static/people.txt", mode='rt', encoding='utf8').read().split()]
     peoplew = open("static/people.txt", mode='wt', encoding='utf8')
