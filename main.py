@@ -41,7 +41,7 @@ def analytics():
     ans = []
     for i in range(9):
         if int(peopler[i]) > 0:
-            ans.append(round(int(resultr[i]) / int(peopler[i] * 100), 2))
+            ans.append(round(int(resultr[i]) / int(peopler[i]) * 100, 2))
         else:
             ans.append(0.0)
     if int(peopler[-1]) == 0:
@@ -49,7 +49,7 @@ def analytics():
     else:
         anal = []
         for i in range(9):
-            anal.append([round(int(natr[i]) / int(peopler[-1] * 100), 2), nation[i]])
+            anal.append([round(int(natr[i]) / int(peopler[-1]) * 100, 2), nation[i]])
     return ans, anal
 
 
@@ -102,11 +102,11 @@ def survey():
         peopler[5] += 1
         if 'f2' in ans:
             resultr[5] += 1
-    if request.form['gender'][:-1] == '"Женщина':
+    if request.form['gender'][:-1] == 'Женщина':
         peopler[6] += 1
         if 'f4' in ans:
             resultr[6] += 1
-    if request.form['gender'][:-1] == '"Мужчина':
+    if request.form['gender'][:-1] == 'Мужчина':
         peopler[7] += 1
         if 'f4' in ans:
             resultr[7] += 1
