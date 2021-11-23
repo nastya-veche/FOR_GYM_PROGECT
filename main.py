@@ -84,7 +84,7 @@ def survey():
             resultr[0] += 1
     if val == '2' and request.form['disability'] == '1':
         peopler[1] += 1
-        if 'f2' in ans:
+        if 'f1' in ans:
             resultr[1] += 1
     if val == '1' and request.form['disability'] != '1':
         peopler[2] += 1
