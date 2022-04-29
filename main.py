@@ -56,7 +56,6 @@ def analytics():
 @app.route('/', methods=['GET'])
 def main_window():
     nation = ['русские', 'башкиры', 'белорусы', 'татары', 'чеченцы', 'чуваши', 'украинцы', 'армяне', 'другое']
-    statistics()
     ans, anal = analytics()
     return render_template('index.html', nation=nation, ans=ans, anal=anal)
 
@@ -141,6 +140,7 @@ def survey():
     db_sess = db_session.create_session()
     db_sess.add(new_survey)
     db_sess.commit()
+    statistics()
     return redirect('/')
 
 
